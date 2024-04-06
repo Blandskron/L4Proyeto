@@ -31,8 +31,7 @@ def question(request):
         form = QuestionForm(request.POST)
         if form.is_valid():
             form.save()
-            # Redirigir a una página de éxito después de guardar los datos
-            return redirect('success')  # Reemplaza 'nombre_de_la_vista_de_exito' con el nombre de tu vista de éxito
+            return redirect('success') 
     else:
         form = QuestionForm()
     return render(request, 'formsapp/form.html', {"form": form})
