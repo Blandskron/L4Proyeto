@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <form method="post" action="{% url 'question' %}">
         {% csrf_token %}
-        <label for="id_question_text">Question Text:</label>
-        <input type="text" id="id_question_text" name="question_text">
+        <label for="id_question_text">Texto de la pregunta:</label>
+        <input type="text" id="id_question_text" name="question_text" required>
         <button type="submit">Guardar</button>
-    </form>    
+    </form>
 </body>
 </html>
